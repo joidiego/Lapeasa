@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7A5D2B #EFEBE2;
+}
+
+html {
+  scroll-behavior: auto;
+  background-color: #FFFFFF;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #0B0A09;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #B79458;
+  color: #0B0A09;
+}
+
+.hairline {
+  background-color: rgba(11, 10, 9, 0.12);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Underline-grow link, used sparingly and only for primary in-copy links / nav */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Focus visibility, kept for every interactive element */
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid #B79458;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes float-card {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.3deg);
+  }
+}
+
+/* Gentle floating motion for the vision & mission photo */
+@keyframes float-image {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-0.6deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(0.6deg);
+  }
+}
+
+/* Gentle swaying motion for the vision & mission copy */
+@keyframes sway-text {
+  0%,
+  100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateX(6px) rotate(-0.3deg);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cloth-drift-a {
+  0%,
+  100% {
+    transform: translateX(0%) scaleY(1) skewX(0deg);
+  }
+  30% {
+    transform: translateX(1.5%) scaleY(1.02) skewX(0.6deg);
+  }
+  65% {
+    transform: translateX(-2%) scaleY(0.98) skewX(-0.8deg);
+  }
+}
+
+@keyframes cloth-drift-b {
+  0%,
+  100% {
+    transform: translateX(0%) scaleY(1) skewX(0deg);
+  }
+  40% {
+    transform: translateX(-1.8%) scaleY(1.03) skewX(-0.5deg);
+  }
+  75% {
+    transform: translateX(2.2%) scaleY(0.97) skewX(0.7deg);
+  }
+}
