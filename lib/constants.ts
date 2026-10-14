@@ -20,7 +20,7 @@ export const NAV_LINKS = [
   { label: 'About', href: '/#about' },
   { label: 'Practice Areas', href: '/#practice-areas' },
   { label: 'Lawyers', href: '/#lawyers' },
-  { label: 'Cases', href: '/#cases' },
+  { label: 'Telaah', href: '/#cases' },
   { label: 'Metode Klien', href: '/metode-penanganan' },
   { label: 'Sertifikasi', href: '/sertifikasi' },
   { label: 'Sertifikat', href: '/sertifikat' },
@@ -141,30 +141,76 @@ export const LAWYERS = [
   },
 ];
 
-export const CASES = [
+// -----------------------------------------------------------------------------
+// Section "Telaah Hukum" (#cases) — tulisan/penelitian hukum singkat.
+// Tiap entri: `paragraphs` ditampilkan lengkap di jendela "Baca selengkapnya";
+// paragraf pertama dipakai sebagai ringkasan di kartu. Kartu selalu berukuran
+// sama berapa pun panjang teksnya. Tambah entri baru = tambah satu objek.
+//
+// PENTING: ini draf informasi umum. Periksa ulang dasar hukum, nomor pasal, dan
+// perubahan peraturan sebelum dipublikasikan, dan sesuaikan dengan bahasa Anda.
+// -----------------------------------------------------------------------------
+export const CASES_HEADER = {
+  eyebrow: 'KAJIAN HUKUM',
+  title: 'Kajian hukum yang cermat untuk keputusan yang tepat.',
+  note: 'Kajian singkat dari tim kami tentang isu hukum yang sering dihadapi. Bersifat informasi umum dan bukan nasihat hukum untuk perkara tertentu.',
+  author: 'Tim Hukum LLO',
+  readMore: 'Baca selengkapnya',
+  basisLabel: 'Dasar hukum',
+  disclaimer:
+    'Tulisan ini bersifat informasi umum dan tidak menggantikan nasihat hukum atas perkara tertentu. Hubungi kami untuk konsultasi sesuai kondisi Anda.',
+};
+
+export const CASES: {
+  number: string;
+  category: string;
+  title: string;
+  basis: string;
+  paragraphs: string[];
+}[] = [
   {
     number: '01',
-    title: 'Corporate Restructuring',
-    detail:
-      'Advised a multinational manufacturer through a debt restructuring involving twelve creditor classes.',
+    category: 'HUKUM PIDANA',
+    title: 'Batas antara Penafsiran dan Analogi dalam Hukum Pidana',
+    basis: 'Asas legalitas dalam hukum pidana Indonesia',
+    paragraphs: [
+      'Asas legalitas menegaskan bahwa seseorang hanya dapat dipidana berdasarkan ketentuan yang sudah ada sebelum perbuatan dilakukan. Karena itu, suatu pasal pidana tidak boleh diterapkan pada perbuatan yang tidak diatur secara tegas hanya dengan menyamakannya. Penafsiran tetap dimungkinkan, misalnya secara gramatikal, sistematis, atau teleologis, selama tidak memperluas rumusan delik melampaui makna katanya.',
+      'Perbedaannya terletak pada titik berangkatnya. Penafsiran bekerja di dalam makna rumusan pasal yang sudah ada, sedangkan analogi menarik perbuatan yang tidak tercantum ke dalam pasal karena dianggap mirip. Penafsiran yang terlalu meluas (ekstensif) mudah bergeser menjadi analogi terselubung, dan di situlah garis tipis yang sering menjadi pokok pembelaan.',
+      'Dalam praktik pembelaan, hal pertama yang diuji adalah apakah setiap unsur delik benar-benar terpenuhi oleh perbuatan yang didakwakan, bukan sekadar apakah perbuatan itu terlihat serupa dengan perbuatan yang dilarang. Kepastian ini melindungi warga dari penerapan hukum pidana yang tidak dapat diperkirakan sebelumnya.',
+    ],
   },
   {
     number: '02',
-    title: 'Commercial Dispute',
-    detail:
-      'Secured a favorable arbitral award in a nine-figure supply chain dispute spanning three jurisdictions.',
+    category: 'PERSAINGAN USAHA',
+    title: 'Per Se Illegal dan Rule of Reason dalam Menilai Praktik Persaingan',
+    basis: 'UU No. 5 Tahun 1999 tentang Larangan Praktik Monopoli dan Persaingan Usaha Tidak Sehat',
+    paragraphs: [
+      'Hukum persaingan usaha di Indonesia mengatur larangan praktik monopoli dan persaingan usaha tidak sehat, dengan Komisi Pengawas Persaingan Usaha (KPPU) sebagai lembaga pengawasnya. Dalam menilai suatu praktik, dikenal dua pendekatan utama, yaitu per se illegal dan rule of reason.',
+      'Pendekatan per se illegal memandang perbuatan tertentu terlarang dengan sendirinya, tanpa perlu membuktikan dampaknya terhadap pasar. Kesepakatan penetapan harga antar pesaing kerap dikaitkan dengan pendekatan ini. Sebaliknya, rule of reason mengharuskan pembuktian bahwa suatu praktik benar-benar menghambat persaingan, misalnya melalui analisis pasar bersangkutan, pangsa pasar, hambatan masuk, dan alasan efisiensi.',
+      'Bagi pelaku usaha, perbedaan ini menentukan strategi. Pada perkara yang dinilai dengan rule of reason, kemampuan menunjukkan definisi pasar yang tepat serta dokumentasi alasan bisnis yang sah menjadi bagian penting dari pembelaan. Karena itu, kajian hukum sebaiknya dilakukan sebelum kerja sama atau kebijakan harga ditetapkan, bukan setelah pemeriksaan dimulai.',
+    ],
   },
   {
     number: '03',
-    title: 'Cross-Border Transaction',
-    detail:
-      'Led legal workstreams on a transatlantic acquisition, coordinating counsel across four countries.',
+    category: 'HUKUM KETENAGAKERJAAN',
+    title: 'PHK sebagai Upaya Terakhir dan Jalur Penyelesaiannya',
+    basis: 'Peraturan ketenagakerjaan dan UU No. 2 Tahun 2004 tentang Penyelesaian Perselisihan Hubungan Industrial',
+    paragraphs: [
+      'Pemutusan hubungan kerja (PHK) pada prinsipnya merupakan langkah terakhir yang sedapat mungkin dihindari oleh pengusaha, pekerja, serikat pekerja, dan pemerintah. Perusahaan tidak dapat memutus hubungan kerja secara sepihak tanpa dasar dan prosedur yang sah, dan pekerja tetap memiliki hak yang harus dipenuhi.',
+      'Apabila terjadi perselisihan, penyelesaiannya ditempuh secara bertahap. Para pihak lebih dahulu berunding secara bipartit. Jika tidak mencapai kesepakatan, perselisihan dilanjutkan melalui mediasi atau konsiliasi, dan apabila masih belum selesai dapat diajukan ke Pengadilan Hubungan Industrial. Tahapan ini umumnya wajib dilalui sebelum gugatan diajukan.',
+      'Dari sisi pekerja, menyimpan perjanjian kerja, slip gaji, surat peringatan, dan korespondensi akan sangat membantu pembuktian. Dari sisi perusahaan, pembinaan yang terdokumentasi dan prosedur yang tertib mengurangi risiko sengketa. Karena aturan ketenagakerjaan beberapa kali berubah, ketentuan yang berlaku perlu dicek pada saat perkara muncul.',
+    ],
   },
   {
     number: '04',
-    title: 'Regulatory Matter',
-    detail:
-      'Represented a financial institution through an extended regulatory inquiry, reaching a negotiated resolution.',
+    category: 'PERDATA & KELUARGA',
+    title: 'Harta Bersama dan Harta Bawaan dalam Perkawinan',
+    basis: 'UU No. 1 Tahun 1974 tentang Perkawinan dan Putusan MK No. 69/PUU-XIII/2015',
+    paragraphs: [
+      'Menurut hukum perkawinan di Indonesia, harta yang diperoleh selama perkawinan pada dasarnya menjadi harta bersama. Sementara itu, harta bawaan masing-masing pihak, serta harta yang diperoleh sebagai hadiah atau warisan, berada di bawah penguasaan pihak yang bersangkutan, kecuali para pihak menentukan lain.',
+      'Perbedaan ini menjadi penting ketika terjadi perceraian atau sengketa waris, karena menentukan harta mana yang dibagi dan harta mana yang tetap menjadi milik pribadi. Sengketa sering muncul bukan karena aturannya tidak jelas, melainkan karena sulitnya membuktikan asal-usul suatu harta.',
+      'Untuk mencegah perselisihan, pasangan dapat membuat perjanjian perkawinan. Putusan Mahkamah Konstitusi No. 69/PUU-XIII/2015 membuka kemungkinan perjanjian ini dibuat tidak hanya sebelum, tetapi juga selama perkawinan berlangsung. Menyimpan bukti kepemilikan dan asal harta sejak awal akan sangat membantu jika sengketa terjadi.',
+    ],
   },
 ];
 
@@ -202,7 +248,7 @@ export const ROOM_WALLS = [
     id: 'front',
     label: 'Wall 01',
     eyebrow: 'WELCOME',
-    title: 'A room built on trust.',
+    title: 'LAPEASA ADVOKAT.',
     description:
       'Placeholder copy — replace with a sentence or two introducing the firm and what visitors should expect.',
     image: '/images/room/wall-front.webp',
@@ -214,7 +260,7 @@ export const ROOM_WALLS = [
     id: 'right',
     label: 'Wall 02',
     eyebrow: 'SERTIFIKASI',
-    title: 'Recognized where it counts.',
+    title: 'PROFESIONALITAS.',
     description:
       'Klik untuk melihat seluruh sertifikasi dan legalitas profesi yang kami miliki.',
     image: '/images/room/wall-right.webp',
