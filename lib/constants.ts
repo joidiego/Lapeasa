@@ -9,7 +9,7 @@ export const FIRM = {
   founded: '2021',
   tagline: 'Karena Hak Anda Layak Diperjuangkan',
   email: 'lapeasa@gmail.com',
-  phone: '+62 813-6394-407',
+  phone: '+62 813 6001 0609',
   whatsapp: 'https://wa.me/6281360010609',
   linkedin: 'https://www.linkedin.com/in/lapeasa/',
   address: ['Kelapa Puan Timur Raya blok S1/4a.Kelapa Gading Jakarta Utara'],
@@ -20,7 +20,7 @@ export const NAV_LINKS = [
   { label: 'About', href: '/#about' },
   { label: 'Practice Areas', href: '/#practice-areas' },
   { label: 'Lawyers', href: '/#lawyers' },
-  { label: 'Telaah', href: '/#cases' },
+  { label: 'KAJIAN', href: '/#cases' },
   { label: 'Metode Klien', href: '/metode-penanganan' },
   { label: 'Sertifikasi', href: '/sertifikasi' },
   { label: 'Sertifikat', href: '/sertifikat' },
@@ -28,11 +28,7 @@ export const NAV_LINKS = [
   { label: 'Contact', href: '/#contact' },
 ];
 
-// -----------------------------------------------------------------------------
-// Vision & Mission — shown right below the "TENTANG KAMI" section.
-// `image` points to the photo used on the left side of that section; drop the
-// real file at public/images/about/visi-misi.jpg (see note in the component).
-// -----------------------------------------------------------------------------
+
 export const VISION_MISSION_IMAGE = '/images/about/visi-misi.jpg';
 
 export const VISION =
@@ -141,15 +137,6 @@ export const LAWYERS = [
   },
 ];
 
-// -----------------------------------------------------------------------------
-// Section "Telaah Hukum" (#cases) — tulisan/penelitian hukum singkat.
-// Tiap entri: `paragraphs` ditampilkan lengkap di jendela "Baca selengkapnya";
-// paragraf pertama dipakai sebagai ringkasan di kartu. Kartu selalu berukuran
-// sama berapa pun panjang teksnya. Tambah entri baru = tambah satu objek.
-//
-// PENTING: ini draf informasi umum. Periksa ulang dasar hukum, nomor pasal, dan
-// perubahan peraturan sebelum dipublikasikan, dan sesuaikan dengan bahasa Anda.
-// -----------------------------------------------------------------------------
 export const CASES_HEADER = {
   eyebrow: 'KAJIAN HUKUM',
   title: 'Kajian hukum yang cermat untuk keputusan yang tepat.',
